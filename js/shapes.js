@@ -19,6 +19,11 @@ window.onload = function() {
     // equivalent set of six event listeners for your solutions. the first one is done for you.
 
     document.getElementById("hello").onclick = sayHello;
+    document.getElementById("rectangle").onclick = drawRectangle;
+    document.getElementById("colored-rectangle").onclick = drawColoredRectangle;
+    document.getElementById("triangle").onclick = drawTriangle;
+    document.getElementById("smile").onclick = drawFace;
+    document.getElementById("pyramid").onclick = drawPyramid;
 }
 
 /*
@@ -26,7 +31,26 @@ window.onload = function() {
  */
 
 const sayHello = function() {
-    // write your exercise 1 code here
+
+  let exerciseOneInput = "";
+  let studentCanvas1 = document.getElementById('student-canvas-1');
+  let character = studentCanvas1.getContext("2d");
+  character.clearRect(0, 0, 1024, 128);
+
+  exerciseOneInput = prompt("Message:");
+    if (text.length >= 50) {
+      alert("Your message is too long. Keep it under 50 characters.");
+      exerciseOneInput = prompt("Message:");
+    }
+    else if (text === null) {
+      character = studentCanvas1.getContext("2d");
+      character.clearRect(0, 0, 1024, 128);
+  }
+
+  character.clearRect(0, 0, 1024, 128);
+  character.font = '48px sans-serif';
+  character.strokeText(text, 30, 70);
+  
 };
 
 /*
