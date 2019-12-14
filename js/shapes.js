@@ -24,7 +24,7 @@ const sayHello = function() {
   let character = studentCanvas1.getContext("2d");
   character.clearRect(0, 0, 1024, 128);
 
-    exerciseOneInput = prompt("Message:");
+  exerciseOneInput = prompt("Message:");
       if (exerciseOneInput.length >= 50) {
         alert("Your message is too long. Keep it under 50 characters.");
         exerciseOneInput = prompt("Message:");
