@@ -260,5 +260,4 @@ const drawFace = function() {
  */
 
 const drawPyramid = function() {
-  
 };
