@@ -134,7 +134,7 @@ const drawColoredRectangle = function() {
         verify = false;
         break;
       default:
-        alert("That is not a supported color. Try again.");
+        alert(input + " is not a supported color.");
         break;
     }
     }
@@ -205,7 +205,7 @@ const drawTriangle = function() {
         verify = false;
       }
       }
-}; 
+};
 
 /*
  * Exercise 5.
@@ -217,11 +217,11 @@ const drawFace = function() {
   character5.clearRect(0, 0, studentCanvas5.width, studentCanvas5.height);
   let radius;
 
-    radius = prompt("radius:");
-
     do {
-    if (radius == null) {
-      character5.clearRect(0, 0, canvas5.width, canvas5.height);
+    radius = prompt("radius:");
+    if (radius == null){
+      character5.clearRect(0, 0, studentCanvas5.width, studentCanvas5.height);
+      break;
     }
     else if (radius < 32) {
       alert("Your radius must be at least 32.")
@@ -260,5 +260,4 @@ const drawFace = function() {
  */
 
 const drawPyramid = function() {
-
 };
