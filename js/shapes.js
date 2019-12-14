@@ -213,7 +213,24 @@ const drawTriangle = function() {
 
 const drawFace = function() {
     let studentCanvas5 = document.getElementById("student-canvas-5");
-    let character5 = studentCanvas5
+    let character5 = studentCanvas5.getContext("2d");
+    character5.clearRect(0, 0, canvas5.width, canvas5.height);
+    let radius;
+
+    do {
+      radius = prompt("radius:");
+
+      if (radius == null) {
+        character5.clearRect(0, 0, canvas5.width, canvas5.height);
+      }
+      else if (radius < 32) {
+        alert("Your radius must be at least 32.")
+      }
+      else if (radius > (studenCanvas5.height / 2) {
+        alert("Your smiley face won't fit on the canvas.")
+      }
+      else if
+    }
 };
 
 /*
