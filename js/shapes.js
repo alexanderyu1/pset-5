@@ -24,19 +24,19 @@ const sayHello = function() {
   let character = studentCanvas1.getContext("2d");
   character.clearRect(0, 0, 1024, 128);
 
-  exerciseOneInput = prompt("Message:");
-    if (exerciseOneInput.length >= 50) {
-      alert("Your message is too long. Keep it under 50 characters.");
-      exerciseOneInput = prompt("Message:");
+    exerciseOneInput = prompt("Message:");
+      if (exerciseOneInput.length >= 50) {
+        alert("Your message is too long. Keep it under 50 characters.");
+        exerciseOneInput = prompt("Message:");
+      }
+      else if (exerciseOneInput === null) {
+        character = studentCanvas1.getContext("2d");
+        character.clearRect(0, 0, 1024, 128);
     }
-    else if (exerciseOneInput === null) {
-      character = studentCanvas1.getContext("2d");
-      character.clearRect(0, 0, 1024, 128);
-  }
 
-  character.font = '48px sans-serif';
-  character.clearRect(0, 0, 1024, 128);
-  character.strokeText(exerciseOneInput, 30, 70);
+    character.font = '48px sans-serif';
+    character.clearRect(0, 0, 1024, 128);
+    character.strokeText(exerciseOneInput, 30, 70);
 };
 
 /*
@@ -44,9 +44,9 @@ const sayHello = function() {
  */
 
 const drawRectangle = function() {
-    let studentCanvas2 = document.getElementById('student-canvas-2');
-    let character2 = studentCanvas2.getContext('2d');
-    character2.clearRect(0, 0, 1024, 128);
+  let studentCanvas2 = document.getElementById('student-canvas-2');
+  let character2 = studentCanvas2.getContext('2d');
+  character2.clearRect(0, 0, 1024, 128);
 
     do {
     var width = prompt("Width: ");
@@ -89,12 +89,12 @@ const drawRectangle = function() {
  */
 
 const drawColoredRectangle = function() {
-    let studentCanvas3 = document.getElementById("student-canvas-3");
-    let character3 = studentCanvas3.getContext("2d");
-    character3.clearRect(0, 0, studentCanvas3.width, studentCanvas3.height);
+  let studentCanvas3 = document.getElementById("student-canvas-3");
+  let character3 = studentCanvas3.getContext("2d");
+  character3.clearRect(0, 0, studentCanvas3.width, studentCanvas3.height);
 
-    let verify = true;
-    let input = null;
+  let verify = true;
+  let input = null;
 
     while (verify == true) {
       input = prompt("Color: ");
@@ -136,14 +136,14 @@ const drawColoredRectangle = function() {
       default:
         alert("That is not a supported color. Try again.");
         break;
-      }
-      }
+    }
+    }
 
-      if (input != null) {
-        character3.beginPath();
-        character3.rect(10, 10, 100, 50);
-        character3.fill();
-      }
+    if (input != null) {
+      character3.beginPath();
+      character3.rect(10, 10, 100, 50);
+      character3.fill();
+    }
 };
 
 /*
@@ -157,67 +157,67 @@ const drawTriangle = function() {
 
   let verify = true;
 
-  while (verify == true) {
-    let aSide = prompt("side 1:");
-    let bSide = prompt("side 2:");
-    let cSide = prompt("side 3:");
+    while (verify == true) {
+      let aSide = prompt("side 1:");
+      let bSide = prompt("side 2:");
+      let cSide = prompt("side 3:");
 
-    if (cSide >= bSide) {
-      cSide = cSide
-    }
-    else {
-      cSide = bSide
-    }
+      if (cSide >= bSide) {
+        cSide = cSide
+      }
+      else {
+        cSide = bSide
+      }
 
-    if (cSide >= aSide){
-      cSide = cSide
-    }
-    else {
-      cSide = aSide
-    }
+      if (cSide >= aSide){
+        cSide = cSide
+      }
+      else {
+        cSide = aSide
+      }
 
-    if (bSide >= aSide) {
-      bSide = bSide
-    }
-    else {
-      bSide = aSide
-    }
+      if (bSide >= aSide) {
+        bSide = bSide
+      }
+      else {
+        bSide = aSide
+      }
 
-    if (isNaN(aSide) == true || isNaN(bSide) == true || isNaN(cSide) == true) {
-      alert("One of your sides was not a number.");
-    }
-    else if (cSide == null || bSide == null || aSide == null) {
-      verify = false;
-    }
-    else if ((25 + Number(bSide)) > 1024 || (Number(aSide) + 25) > 512) {
-      alert("Your triangle won't fit on the canvas.");
-    }
-    else if (cSide ** 2 != aSide ** 2 + bSide ** 2) {
-      alert("That's not a valid right triangle.");
-    }
-    else {
-      character4.beginPath();
-      character4.moveTo(25, 25);
-      character4.lineTo(25, (25+Number(aSide)));
-      character4.lineTo((25 + Number(bSide)), (25+Number(aSide)));
-      character4.lineTo(25, 25);
-      character4.stroke();
-      verify = false;
-  }
-  }
-};
+      if (isNaN(aSide) == true || isNaN(bSide) == true || isNaN(cSide) == true) {
+        alert("One of your sides was not a number.");
+      }
+      else if (cSide == null || bSide == null || aSide == null) {
+        verify = false;
+      }
+      else if ((25 + Number(bSide)) > 1024 || (Number(aSide) + 25) > 512) {
+        alert("Your triangle won't fit on the canvas.");
+      }
+      else if (cSide ** 2 != aSide ** 2 + bSide ** 2) {
+        alert("That's not a valid right triangle.");
+      }
+      else {
+        character4.beginPath();
+        character4.moveTo(25, 25);
+        character4.lineTo(25, (25+Number(aSide)));
+        character4.lineTo((25 + Number(bSide)), (25+Number(aSide)));
+        character4.lineTo(25, 25);
+        character4.stroke();
+        verify = false;
+      }
+      }
+}; 
 
 /*
  * Exercise 5.
  */
 
 const drawFace = function() {
-    let studentCanvas5 = document.getElementById("student-canvas-5");
-    let character5 = studentCanvas5.getContext("2d");
-    character5.clearRect(0, 0, studentCanvas5.width, studentCanvas5.height);
-    let radius;
+  let studentCanvas5 = document.getElementById("student-canvas-5");
+  let character5 = studentCanvas5.getContext("2d");
+  character5.clearRect(0, 0, studentCanvas5.width, studentCanvas5.height);
+  let radius;
 
-      radius = prompt("radius:");
+    radius = prompt("radius:");
 
     do {
     if (radius == null) {
@@ -232,10 +232,10 @@ const drawFace = function() {
     else if (isNaN(radius)) {
       alert("Your radius is not a number.")
     }
-  } while (radius > 256 || isNaN(radius) || radius < 32);
+    } while (radius > 256 || isNaN(radius) || radius < 32);
 
-    let eye = radius * 0.15
-    let mouth = radius * 0.7
+  let eye = radius * 0.15
+  let mouth = radius * 0.7
 
     character5.beginPath();
     character5.arc(512, 256, radius, 0, 2 * Math.PI);
