@@ -218,19 +218,19 @@ const drawFace = function() {
   let radius;
 
     do {
-    radius = prompt("radius:");
-    if (radius == null){
-      character5.clearRect(0, 0, studentCanvas5.width, studentCanvas5.height);
-      break;
-    }
-    else if (radius < 32) {
-      alert("Your radius must be at least 32.")
-    }
-    else if (radius > (studentCanvas5.height / 2)) {
-      alert("Your smiley face won't fit on the canvas.")
-    }
-    else if (isNaN(radius)) {
-      alert("Your radius is not a number.")
+      radius = prompt("radius:");
+      if (radius == null){
+        character5.clearRect(0, 0, studentCanvas5.width, studentCanvas5.height);
+        break;
+      }
+      else if (radius < 32) {
+        alert("Your radius must be at least 32.")
+      }
+      else if (radius > (studentCanvas5.height / 2)) {
+        alert("Your smiley face won't fit on the canvas.")
+      }
+      else if (isNaN(radius)) {
+        alert("Your radius is not a number.")
     }
     } while (radius > 256 || isNaN(radius) || radius < 32);
 
