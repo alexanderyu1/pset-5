@@ -260,5 +260,5 @@ const drawFace = function() {
  */
 
 const drawPyramid = function() {
-    // write your exercise 5 code here
+
 };
