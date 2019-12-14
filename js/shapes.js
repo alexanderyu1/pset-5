@@ -212,7 +212,8 @@ const drawTriangle = function() {
  */
 
 const drawFace = function() {
-    // write your exercise 4 code here
+    let studentCanvas5 = document.getElementById("student-canvas-5");
+    let character5 = studentCanvas5
 };
 
 /*
