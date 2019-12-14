@@ -214,23 +214,45 @@ const drawTriangle = function() {
 const drawFace = function() {
     let studentCanvas5 = document.getElementById("student-canvas-5");
     let character5 = studentCanvas5.getContext("2d");
-    character5.clearRect(0, 0, canvas5.width, canvas5.height);
+    character5.clearRect(0, 0, studentCanvas5.width, studentCanvas5.height);
     let radius;
 
-    do {
       radius = prompt("radius:");
 
-      if (radius == null) {
-        character5.clearRect(0, 0, canvas5.width, canvas5.height);
-      }
-      else if (radius < 32) {
-        alert("Your radius must be at least 32.")
-      }
-      else if (radius > (studenCanvas5.height / 2) {
-        alert("Your smiley face won't fit on the canvas.")
-      }
-      else if
+    do {
+    if (radius == null) {
+      character5.clearRect(0, 0, canvas5.width, canvas5.height);
     }
+    else if (radius < 32) {
+      alert("Your radius must be at least 32.")
+    }
+    else if (radius > (studentCanvas5.height / 2)) {
+      alert("Your smiley face won't fit on the canvas.")
+    }
+    else if (isNaN(radius)) {
+      alert("Your radius is not a number.")
+    }
+  } while (radius > 256 || isNaN(radius) || radius < 32);
+
+    let eye = radius * 0.15
+    let mouth = radius * 0.7
+
+    character5.beginPath();
+    character5.arc(512, 256, radius, 0, 2 * Math.PI);
+    character5.stroke();
+    character5.closePath();
+    character5.beginPath();
+    character5.arc(512, 256, mouth, 0, Math.PI);
+    character5.stroke();
+    character5.closePath();
+    character5.beginPath();
+    character5.arc(512 - 0.4 * radius, 256 - 0.4 * radius, eye, 0, 2 * Math.PI);
+    character5.stroke();
+    character5.closePath();
+    character5.beginPath();
+    character5.arc(512 + 0.4 * radius, 256 - 0.4* radius, eye, 0, 2 * Math.PI);
+    character5.stroke();
+    character5.closePath();
 };
 
 /*
