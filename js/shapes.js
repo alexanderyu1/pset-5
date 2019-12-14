@@ -140,10 +140,10 @@ const drawColoredRectangle = function() {
     }
 
   if (input != null) {
-      character3.beginPath();
-      character3.rect(10, 10, 100, 50);
-      character3.fill();
-    }
+    character3.beginPath();
+    character3.rect(10, 10, 100, 50);
+    character3.fill();
+  }
 };
 
 /*
